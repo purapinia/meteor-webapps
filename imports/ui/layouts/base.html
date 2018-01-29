@@ -1,0 +1,40 @@
+<template name="base">
+		
+
+
+	      <div class="navbar navbar-fixed-top scroll-hide" >
+
+			{{> top }}
+			{{> menu }}			
+
+	        </div>
+
+	{{#if currentUser}}
+
+		<div class="container-fluid main-content">
+			{{#momentum plugin='slide-height'}}
+
+				{{>yield}}
+			{{/momentum}}
+
+		</div>
+
+
+	{{else}}
+		{{> inicio}}
+	{{/if}}
+
+	 	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script>
+	    	<script src="/javascripts/tables.js" type="text/javascript"></script>
+		<script src="/javascripts/jquery.fancybox.pack.js" type="text/javascript">   </script>
+		<!--Listas anidadas procesos-->
+
+
+
+
+	    	<script src="/javascripts/jquery.nestable.js" type="text/javascript"></script>
+	    	<script src="/javascripts/respond.js" type="text/javascript"></script>
+
+	
+</template>
+

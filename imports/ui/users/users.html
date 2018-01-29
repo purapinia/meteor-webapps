@@ -1,0 +1,182 @@
+
+
+<template name="users">
+    
+
+
+	  <!-- DataTables Example -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="widget-container fluid-height clearfix">
+              <div class="heading">
+                <i class="fa fa-table"></i>Listado de usuarios en sistema
+              </div>
+              <div class="widget-content padded clearfix">
+		
+		<div id="toolbar_user" class="btn-group">
+		    <button type="button" class="btn btn-default modal-control" data-tipo='insert-user' data-abc='A' title='Agregar'>
+			<i class="fa fa-plus fa-fw hover "></i> 
+		    </button>
+		    <button type="button" class="hidden btn btn-default hover descarga"  data-url='usuarios' title="Exportar listado" onclick="javascript:DescargaArchivo('controlador.php?excel=empleados')" >
+			<i class="fa fa-file-excel-o fa-fw "></i> 
+		    </button>
+		</div>
+
+		<div class="table-responsive">
+		<table data-toolbar="#toolbar_user" class="table table-bordered table-hover table-striped" data-toggle="table" data-page-list="[10, 25, 50, 75, 100, 150, 200]" data-search="true" data-show-columns="true" data-pagination="true">                                                    
+                  <thead>
+
+                      <tr>
+			<th data-sortable="true" data-halign="center" data-align="left" data-visible="false">Folio</th>
+			<th data-sortable="true" data-halign="center" data-align="left">Usuario</th>
+			<th data-sortable="true" data-halign="center" data-align="left">Correo</th>	
+			<th data-sortable="true" data-halign="center" data-align="right">Contacto</th>						
+			<th data-sortable="true" data-halign="center" data-align="center">Estatus</th>
+			<th data-halign="center" data-align="center" data-sortable="true" >Fecha de alta</th>
+			<th  data-halign="center" data-align="center" data-sortable="true" data-visible="false">Fecha de<br>modificación</th>
+			<th data-switchable="false"  data-align="center">Opciones</th>
+		</tr>
+                  </thead>
+                  <tbody>
+                   
+                   
+                  </tbody>
+                </table>
+		</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end DataTables Example -->
+
+
+
+</template>
+
+
+
+
+
+<template name="insert-user">
+    
+    <div class="modal fade dragable_modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+	 <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h4 class="modal-title">insert</h4>
+      </div>
+ <form class="form-ABC" data-form='usuario' data-tipo="<?php echo $_POST['tipoabc']; ?>" data-id="<?php echo $id; ?>" role="form">
+      <div class="modal-body col-lg-12">
+        
+	 <div class="widget-container fluid-height clearfix">
+		<div class="heading">
+              		Datos generales
+	       </div>	
+	    <div class="widget-content padded clearfix">		
+	    <div class="form-group">
+	    	<div class="input-group">
+              	        <span class="input-group-addon">Usuario</span>
+	       		<input type="input" class="form-control required" placeholder="Nombre de usuario" data-change='minusculas' name="usuario"  value="<?php echo $usuario ?>" >
+	       	</div>
+	    </div>
+			
+	    <div class="form-group">
+	    	<div class="input-group">
+              	        <span class="input-group-addon">Contraseña</span>
+	              	<input type="password" class="form-control required" placeholder="Mi contraseña" name="password" value="<?php echo $contrasena ?>" >
+	       	</div>
+	    </div>
+
+	    <div class="form-group hidden">
+	    	<div class="input-group">
+              	        <span class="input-group-addon">Nombre</span>
+	              	<input type="input" class="form-control" placeholder="juan.perez" data-change='mayusculas' name="nombre" value="<?php echo $nombre ?>" >
+	       	</div>
+	    </div>
+
+
+	     <div class="form-group">
+	    	<div class="input-group">
+              	        <span class="input-group-addon">Correo</span>
+	              	<input type="input" class="form-control" placeholder="mail@domain.com" name="correo"  data-change='minusculas'  value="<?php echo $correo ?>" >
+	       	</div>
+	    </div>     	
+	
+	   <div class="form-group">
+	    	<div class="input-group">
+              	        <span class="input-group-addon">Contacto</span>
+	              	<input type="input" class="form-control" placeholder="442123456" name="contacto" onKeyPress="return campoNumero(event);" value="<?php echo $contacto ?>" >
+	       	</div>
+	    </div>
+		
+
+            <div class="form-group hidden">
+	    	<div class="input-group">
+              	        <span class="input-group-addon">Fecha alta</span>
+           		<input type="date" class="form-control" readonly placeholder="" value="<?php echo $fecha_alta ?>">
+	       	</div>
+	    </div>
+
+	   <div class="form-group hidden">
+	    	<div class="input-group">
+              	        <span class="input-group-addon">Fecha modificación</span>
+	              	<input type="date" class="form-control" readonly placeholder="" value="<?php echo $fecha_modificacion ?>">
+	       	</div>
+	    </div>
+
+
+	    <div class="form-group">
+	    	<div class="input-group">
+              	        <span class="input-group-addon">Estatus</span>
+	              	<select class="form-control required"  name="id_estatus" >
+
+				</select>
+	       	</div>
+	    </div>
+
+
+
+		</div>	
+
+	</div>
+
+<br>
+
+
+		
+
+
+			
+<br>
+			<div class="form-group col-lg-12">
+	            	
+	            	<div class="form-group">
+	            		<div id='form-mensaje'></div>
+	            	</div>
+	          	</div>
+	       
+			
+
+      </div>
+      <div class="modal-footer ">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Aceptar</button>
+      </div>
+ </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+
+</template>
+
+
+
+
+
+
+
+
+
+

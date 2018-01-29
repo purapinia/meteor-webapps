@@ -1,0 +1,304 @@
+
+
+<template name="menu">
+	
+
+	
+	  <div class="container-fluid main-nav clearfix" >
+          <div class="nav-collapse">
+
+
+            <ul class="nav">
+{{#if currentUser}}
+
+		<li class="dropdown"><a data-toggle="dropdown" href="#">
+                <span aria-hidden="true" class="fa fa-sitemap"></span>General<b class="caret"></b></a>
+                <ul class="dropdown-menu" >
+                  <li>
+                    <a  href="{{ pathFor 'generales' }}">Datos generales</a>
+                  </li>
+		 <li>
+                    <a href="/puestos">Puestos</a>
+                  </li>
+                  <li>
+                    <a href="/proveedores">Proveedores</a>
+                  </li>
+                </ul>
+              </li>
+              
+
+           <li class="dropdown"><a data-toggle="dropdown" href="#">
+                <span aria-hidden="true" class="fa fa-gear"></span>Configuración<b class="caret"></b></a>
+                <ul class="dropdown-menu" >
+                  <li>
+                    <a class="tachado" href="#">Parametros</a>
+                  </li>
+
+
+
+		<li>
+                    <a  href="/users">Usuarios</a>
+                  </li>
+
+
+
+
+		<li>
+                    <a href="/accesos">Control de accesos</a>
+                  </li>
+
+           
+                </ul>
+              </li>
+
+
+
+
+
+
+
+
+	<li class="dropdown"><a data-toggle="dropdown" href="#">
+                <span aria-hidden="true" class="fa fa-user"></span>Talento humano<b class="caret"></b></a>
+                <ul class="dropdown-menu" s>
+
+
+
+                  <li>
+                    <a href="/empleados">Empleados</a>
+                  </li>
+
+	
+	 	<li>
+                    <a href="#" class="tachado">Directivos</a>
+                  </li>
+ 		<li>
+                    <a href="#" class="tachado">Clima laboral</a>
+                  </li>
+
+
+
+                </ul>
+              </li>
+
+
+
+
+
+
+
+
+
+
+
+
+            <li class="dropdown"><a data-toggle="dropdown" class="tachado" href="#">
+                <span aria-hidden="true" class="fa fa-folder-open-o"></span>Información<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="tachado" href="#">Escenarios</a>
+                  </li>
+                  <li>
+                    <a class="tachado" href="#">Estados financieros</a>
+                  </li>
+                  <li>
+                    <a class="tachado" href="#">Indicadores</a>
+                  </li>
+                </ul>
+              </li>
+
+
+
+
+
+
+
+              <li class="dropdown"><a data-toggle="dropdown" href="#">
+                <span aria-hidden="true" class="fa fa-adjust"></span>Sucursales<b class="caret"></b></a>
+                <ul class="dropdown-menu" >
+
+
+
+
+                  <li>
+                    <a href="/sucursales">Directorio</a>
+                  </li>
+
+
+		 <li>
+                    <a class="tachado" href="#">Metas asignadas</a>
+                  </li>
+                  <li>
+                    <a class="tachado" href="#">Seguimiento</a>
+                  </li>
+
+
+                </ul>
+              </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <li class="dropdown"><a data-toggle="dropdown" href="#">
+                <span aria-hidden="true" class="fa fa-tasks"></span>Activo fijo<b class="caret"></b></a>
+                <ul class="dropdown-menu" >
+
+		<li>
+                    <a class="tachado" href="#">Parametrización</a>
+                  </li>
+                  <li>
+                    <a class="tachado" href="#">Administración del activo fijo</a>
+                  </li>
+
+
+
+                  <li>
+                    <a href="/activos">Compras del activo fijo</a>
+                  </li>
+
+
+                </ul>
+              </li>
+
+
+
+
+
+
+
+
+
+
+                  <li>
+                    <a href="/socios"><span aria-hidden="true" class="fa fa-group"></span>Membresía</a>
+                  </li>
+
+
+
+
+
+
+<!--
+              <li class="dropdown "><a data-toggle="dropdown" class="tachado" href="#">
+                <span aria-hidden="true" class="fa fa-money"></span>Contabilidad<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="tachado" href="#">Activo improductivo</a>
+                  </li>
+                  <li>
+                    <a class="tachado" href="#">Activo productivo</a>
+                  </li>
+                  <li>
+                    <a class="tachado" href="#">Pasivos</a>
+                  </li>
+                </ul>
+              </li>
+
+		
+
+              
+              <li><a class="tachado" href="#">
+                <span aria-hidden="true" class="fa fa-dollar"></span>Gastos</a>
+              </li>
+
+-->
+          
+
+
+		<li>
+                    <a href="/proyectandos"><span aria-hidden="true" class="fa fa-external-link-square"></span>Proyectandos</a>
+                  </li>
+
+                  
+  
+
+
+
+
+
+
+
+
+	       <li class="dropdown "><a data-toggle="dropdown"  href="#">
+                <span aria-hidden="true" class="fa fa-list-ol"></span>Plan operativo<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+
+
+		<li>
+                    <a href="/alisprocesos">Alineación de procesos</a>
+                  </li>
+
+                 
+                </ul>
+              </li>
+
+
+
+
+
+
+
+<!--
+             <li class="dropdown"><a data-toggle="dropdown" class="tachado" href="#">
+                <span aria-hidden="true" class="fa fa-folder-open-o"></span>Escenario<b class="caret"></b></a>
+                <ul class="dropdown-menu" >
+                  <li>
+                    <a class="tachado" href="#">Balanza</a>
+                  </li>
+                  <li>
+                    <a class="tachado" href="#">Estado de resultados</a>
+                  </li>
+                  <li>
+                    <a class="tachado" href="#">Indicadores financieros</a>
+                  </li>
+                  <li>
+                    <a class="tachado" href="#">Razones financieras</a>
+                  </li>
+                  <li>
+                    <a class="tachado" href="#">Balance</a>
+                  </li>
+             
+                </ul>
+              </li>
+
+	      <li class="dropdown"><a data-toggle="dropdown" class="tachado" href="#">
+                <span aria-hidden="true" class="fa fa-cogs"></span>Utilidades<b class="caret"></b></a>
+                <ul class="dropdown-menu" >
+                  <li>
+                    <a class="tachado" href="#">Scoring</a>
+                  </li>
+                 
+             
+                </ul>
+              </li>
+-->
+
+
+{{else}}
+
+				      <li class="dropdown user"><a class="logins" data-toggle="modal" href="#"><span aria-hidden="true" class="fa fa-user"></span>Iniciar sesión</a>
+						
+				      </li>
+                   
+{{/if}}
+	
+    </ul>
+
+          </div>
+        </div>
+
+
+</template>
+
+
+

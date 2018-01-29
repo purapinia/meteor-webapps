@@ -1,0 +1,54 @@
+
+<template name="proyectandos">
+
+
+        <!-- DataTables Example -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="widget-container fluid-height clearfix">
+              <div class="heading">
+                <i class="fa fa-table"></i>Listado proyectandos registrados
+              </div>
+              <div class="widget-content padded clearfix">
+		
+		<div id="toolbar" class="btn-group">
+		    <button type="button" class="btn btn-default modal-control" data-tipo='proyectando' data-abc='A' title='Agregar'>
+			<i class="fa fa-plus fa-fw hover "></i> 
+		    </button>
+		    <button type="button" class="hidden btn btn-default hover descarga"  data-url='proyectando' title="Exportar listado" onclick="javascript:DescargaArchivo('controlador.php?excel=empleados')" >
+			<i class="fa fa-file-excel-o fa-fw "></i> 
+		    </button>
+		</div>
+
+		<div class="table-responsive">
+		<table data-toolbar="#toolbar" class="table table-bordered table-hover table-striped" data-toggle="table" data-page-list="[10, 25, 50, 75, 100, 150, 200]" data-search="true" data-show-columns="true" data-pagination="true">                                                    
+                  <thead>
+
+                      <tr>
+
+<!--			<th data-sortable="true" data-halign="center" data-align="left">Nombre</th>-->
+			<th data-sortable="true" data-halign="center" data-align="left">Sucursal</th>
+			<th data-sortable="true" data-halign="center" data-align="left">Descripción</th>
+			<th data-sortable="true" data-halign="center" data-align="left">Mes proyección</th>
+			<th data-sortable="true" data-halign="center" data-align="center">Estatus</th>
+			<th data-halign="center" data-align="center" data-sortable="true" >Fecha de alta</th>
+			<th data-halign="center" data-align="center" data-sortable="true" data-visible="false">Fecha de<br>modificación</th>
+			<th data-switchable="false"  data-align="center">Opciones</th>
+		</tr>
+                  </thead>
+                  <tbody>
+
+                   
+                  </tbody>
+                </table>
+		</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end DataTables Example -->
+
+
+</template>
+
+
